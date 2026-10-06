@@ -1,4 +1,8 @@
 @charset "UTF-8";
+
+/** ==========================================
+ * 基本設定
+ * ========================================== */
 * {
   margin: 0;
   padding: 0;
@@ -13,11 +17,12 @@ html, body {
   font-family: "wanpaku-rera", sans-serif;
   font-weight: 400;
   font-style: normal;
+  overflow-x: hidden;
 }
 
-
-
-/* Container */
+/** ==========================================
+ * Container
+ * ========================================== */
 .container {
   width: 100%;
   margin-left: auto;
@@ -26,9 +31,9 @@ html, body {
   background-color: #FFFFFF;
 }
 
-
-
-/* Navigation */
+/** ==========================================
+ * Navigation
+ * ========================================== */
 header {
   margin-top: 1%;
   margin-left: 10%;
@@ -46,7 +51,6 @@ header {
   font-size: 36px;
   color: #6bd3df;
   font-weight: bold;
-  text-align: undefined;
   width: 10%;
   float: left;
   margin-top: 15px;
@@ -92,13 +96,13 @@ ul li:hover a {
 .hero_header {
   color: #FFFFFF;
   text-align: center;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  margin: 0px;
   letter-spacing: 4px;
 }
 
+/** ==========================================
+ * Hero & Video Frame
+ * ========================================== */
 .iframe-wrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -124,7 +128,7 @@ ul li:hover a {
   z-index: 2;
 }
 
-svg{
+svg {
   position: relative;
   top: -275px;
   right: 120px;
@@ -145,53 +149,74 @@ svg{
   padding: 10px 15px;
 }
 
-
 .light {
-font-weight: bold;
+  font-weight: bold;
 }
 
 .tagline {
-text-align: center;
-color: #FFFFFF;
-margin-top: 7%;
-font-weight: lighter;
-text-transform: uppercase;
-letter-spacing: 1px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 7%;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-
-
-/* About Section */
-.text_column {
-width: 25%;
-height: auto;
-text-align: justify;
-font-weight: lighter;
-line-height: 25px;
-color: #1a1a1a;
-}
-
+/** ==========================================
+ * About Section (PROFILE) - 中央揃え対応
+ * ========================================== */
 .about {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-background-color: #FFFFFF;
-margin-bottom: 10%;
+  justify-content: center;
+  background-color: #FFFFFF;
+  margin-bottom: 10%;
+  padding: 0 5%;
 }
 
-.about h4{
+.about h2.hidden {
+  display: none;
+}
+
+/* プロフィール画像（中央揃え） */
+img.text_column {
+  width: 400px;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* プロフィール名前（中央揃え） */
+.about h4 {
   font-size: 36px;
-  margin: 3% 100%;
+  text-align: center;
+  margin: 0 0 20px 0;
+  width: 100%;
 }
 
+/* プロフィール紹介文（幅を揃えて中央揃え） */
+p.text_column {
+  width: 600px;
+  max-width: 90%;
+  height: auto;
+  text-align: justify;
+  font-weight: lighter;
+  line-height: 25px;
+  color: #1a1a1a;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-h3{
+h3 {
   text-align: center;
   font-size: 64px;
   padding-bottom: 5%;
 }
-
 
 .cards {
   position: relative;
@@ -201,7 +226,9 @@ h3{
   object-position: center;
 }
 
-
+/** ==========================================
+ * Loop Banner Section
+ * ========================================== */
 .loop {
   height: 200%;
   display: flex;
@@ -209,6 +236,7 @@ h3{
   align-items: center;
   overflow: hidden;
 }
+
 .looptext {
   font-style: italic;
   color: #FEFEFE;
@@ -217,11 +245,13 @@ h3{
   height: 100%;
   padding-top: 2.5%;
 }
+
 .double-content {
   display: inline-block;
   font-size: 250px;
   white-space: nowrap;
 }
+
 @keyframes loop-text {
   0% {
     transform: translateX(0%);
@@ -231,261 +261,244 @@ h3{
   }
 }
 
-
-
-/* Stats Gallery */
+/** ==========================================
+ * Stats & Gallery
+ * ========================================== */
 .stats {
-color: #717070;
-margin-bottom: 5px;
+  color: #717070;
+  margin-bottom: 5px;
 }
 
 .gallery {
-clear: both;
-display: inline-block;
-width: 100%;
-background-color: #FFFFFF;
-/* [disabled]min-width: 400px;
-*/
-padding-bottom: 35px;
-padding-top: 0px;
-margin-top: -5px;
-margin-bottom: 0px;
+  clear: both;
+  display: inline-block;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-bottom: 35px;
+  padding-top: 0px;
+  margin-top: -5px;
+  margin-bottom: 0px;
 }
 
 .thumbnail {
-width: 25%;
-text-align: center;
-float: left;
-margin-top: 35px;
+  width: 25%;
+  text-align: center;
+  float: left;
+  margin-top: 35px;
 }
 
 .gallery .thumbnail h4 {
-margin-top: 5px;
-margin-right: 5px;
-margin-bottom: 5px;
-margin-left: 5px;
-color: #52BAD5;
+  margin: 5px;
+  color: #52BAD5;
 }
 
 .gallery .thumbnail p {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-color: #A3A3A3;
+  margin: 0px;
+  color: #A3A3A3;
 }
 
-
-
-/* Parallax Section */
+/** ==========================================
+ * Parallax Banner Section
+ * ========================================== */
 .banner {
   margin-bottom: 10%;
-background-color: #2D9AB7;
-background-image: url(../images/parallax.png);
-height: 400px;
-background-attachment: fixed;
-background-size: cover;
-background-repeat: no-repeat;
+  background-color: #2D9AB7;
+  background-image: url(../images/parallax.png);
+  height: 400px;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .parallax {
-color: #FFFFFF;
-text-align: right;
-padding-right: 100px;
-padding-top: 110px;
-letter-spacing: 2px;
-margin-top: 0px;
+  color: #FFFFFF;
+  text-align: right;
+  padding-right: 100px;
+  padding-top: 110px;
+  letter-spacing: 2px;
+  margin-top: 0px;
 }
 
 .parallax_description {
-color: #FFFFFF;
-text-align: right;
-padding-right: 100px;
-width: 30%;
-float: right;
-font-weight: lighter;
-line-height: 23px;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
+  color: #FFFFFF;
+  text-align: right;
+  padding-right: 100px;
+  width: 30%;
+  float: right;
+  font-weight: lighter;
+  line-height: 23px;
+  margin: 0px;
 }
 
-
-
-/* More info */
+/** ==========================================
+ * Footer & Representative MVs
+ * ========================================== */
 footer {
   width: 100%;
-background-color: #FFFFFF;
-padding-bottom: 35px;
+  background-color: #FFFFFF;
+  padding-bottom: 35px;
+  display: inline-block;
 }
 
 footer h3 {
   padding-bottom: 5%;
   font-size: 64px;
-color: #272727;
-text-align: center;
+  color: #272727;
+  text-align: center;
 }
 
-footer img{
+footer img {
   float: left;
 }
 
-
-
-
-.daihyoumv{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-bottom: 15%;
+.daihyoumv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 15%;
 }
 
-.daihyoumv section{
-  padding: 0; /* ← paddingをリセット */
-  margin: 0 8px 5% 8px ; /* ← 左右の間隔だけ指定 */
+.daihyoumv section {
+  padding: 0;
+  margin: 0 8px 5% 8px;
   transition: all 0.2s;
   width: 18%;
 }
 
-section .mv{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
+section .mv {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .daihyoumv section:hover {
   transform: scale(1.3, 1.3);
 }
 
-
-.mv img{
-    max-width: 100%;
-    display: block;
-    object-fit: cover;
+.mv img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
-.vanpaia{
-  object-position:30%;
+.vanpaia {
+  object-position: 30%;
 }
 
-
-.mv h4{
+.mv h4 {
   font-size: 20px;
   text-align: center;
   float: left;
 }
 
-.mv p{
+.mv p {
   margin-bottom: 10%;
 }
 
 .youtubelink {
-	display: block;
-	text-align: center;
-	text-decoration: none;
-	/* width: 200px;
-  height: 80px; */
-	padding: 5% 8% 7% 8% ;
-	font-weight: bold;
-	/* border: 2px solid #27acd9; */
-	color: #27acd9;
-	cursor: pointer;
-	position: relative;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 5% 8% 7% 8%;
+  font-weight: bold;
+  color: #27acd9;
+  cursor: pointer;
+  position: relative;
   overflow: hidden;
   z-index: 1;
 }
+
 .youtubelink::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 80%;
-	background-color: rgb(39, 172, 217);
-	transform: translateX(-100%);
-	transition: all .3s;
-	z-index: -1;
-}
-.youtubelink:hover::before {
-	transform: translateX(0);
-}
-.youtubelink:hover {
-	color: #fff;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  background-color: rgb(39, 172, 217);
+  transform: translateX(-100%);
+  transition: all .3s;
+  z-index: -1;
 }
 
+.youtubelink:hover::before {
+  transform: translateX(0);
+}
+
+.youtubelink:hover {
+  color: #fff;
+}
 
 .button {
-width: 200px;
-margin-top: 40px;
-margin-right: auto;
-margin-bottom: auto;
-margin-left: auto;
-padding-top: 20px;
-padding-right: 10px;
-padding-bottom: 20px;
-padding-left: 10px;
-text-align: center;
-vertical-align: middle;
-border-radius: 0px;
-text-transform: uppercase;
-font-weight: bold;
-letter-spacing: 2px;
-border: 3px solid #FFFFFF;
-color: #FFFFFF;
-transition: all 0.3s linear;
+  width: 200px;
+  margin: 40px auto auto auto;
+  padding: 20px 10px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 0px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border: 3px solid #FFFFFF;
+  color: #FFFFFF;
+  transition: all 0.3s linear;
 }
-
-
 
 .button:hover {
-background-color: #FEFEFE;
-color: #C4C4C4;
-cursor: pointer;
+  background-color: #FEFEFE;
+  color: #C4C4C4;
+  cursor: pointer;
 }
 
-.youtubeshort{
+/** ==========================================
+ * YouTube Shorts Section
+ * ========================================== */
+.youtubeshort {
   text-align: center;
   margin-left: auto;
   margin-bottom: 10%;
-  display:-ms-flexbox;
-  display:-webkit-box;
-  display:flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.footer_column{
+.footer_column {
   width: auto;
   height: 800px;
-    margin: 0 1.5% ;
+  margin: 0 1.5%;
 }
 
-.footer_column iframe{
+.footer_column iframe {
   width: 450px;
+  max-width: 100%;
   height: 800px;
 }
 
+/** ==========================================
+ * SNS & Copyright Footer
+ * ========================================== */
 .copyright {
-text-align: center;
-padding-top: 20px;
-padding-bottom: 20px;
-background-color: #717070;
-color: #FFFFFF;
-text-transform: uppercase;
-font-weight: lighter;
-letter-spacing: 2px;
-border-top-width: 2px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #717070;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: lighter;
+  letter-spacing: 2px;
+  border-top-width: 2px;
 }
 
-.SNS{
+.SNS {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -495,265 +508,223 @@ border-top-width: 2px;
   background-color: #717070;
 }
 
-.otoiro{
+.otoiro {
   padding: 5%;
 }
 
-.otoiro img{
+.otoiro img {
   width: 480px;
+  max-width: 100%;
   height: auto;
 }
 
-.x{
+.x {
   padding: 5%;
 }
 
-.x img{
+.x img {
   width: 100px;
   height: 100px;
 }
 
-.insta{
+.insta {
   padding: 5%;
 }
 
-.insta img{
+.insta img {
   width: 100px;
   height: 100px;
 }
 
 .footer_banner {
-background-color: #B3B3B3;
-padding-top: 60px;
-padding-bottom: 60PX;
-margin-bottom: 0px;
-background-image: url(../images/pattern.png);
-background-repeat: repeat;
-}
-
-footer {
-display: inline-block;
+  background-color: #B3B3B3;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 0px;
+  background-image: url(../images/pattern.png);
+  background-repeat: repeat;
 }
 
 .hidden {
-display: none;
+  display: none;
 }
 
-
-
-/* Mobile */
+/** ==========================================
+ * Responsive: Mobile (max-width: 320px)
+ * ========================================== */
 @media (max-width: 320px) {
-.logo {
-width: 100%;
-text-align: center;
-margin-top: 13px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-}
-.container header nav {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-width: 100%;
-float: none;
-display: none;
-}
-nav ul li {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-width: 100%;
-text-align: center;
-}
-.text_column {
-width: 100%;
-text-align: justify;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-}
-.thumbnail {
-width: 100%;
-}
-.footer_column {
-width: 100%;
-margin-top: 0px;
-}
-.parallax {
-text-align: center;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-padding-top: 40%;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-width: 100%;
-font-size: 18px;
-}
-.parallax_description {
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-width: 90%;
-margin-top: 25px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 12px;
-float: none;
-text-align: center;
-}
-.banner {
-background-color: #2D9AB7;
-background-image: none;
-}
-.tagline {
-margin-top: 20px;
-line-height: 22px;
-}
-.hero_header {
-padding-left: 10px;
-padding-right: 10px;
-line-height: 22px;
-text-align: center;
-}
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin: 13px 0 0 0;
+  }
+  .container header nav {
+    margin: 0px;
+    width: 100%;
+    float: none;
+    display: none;
+  }
+  nav ul li {
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+  }
+  img.text_column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .about h4 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  p.text_column {
+    width: 100%;
+    text-align: justify;
+  }
+  .thumbnail {
+    width: 100%;
+  }
+  .footer_column {
+    width: 100%;
+    margin-top: 0px;
+    height: auto;
+  }
+  .footer_column iframe {
+    width: 100%;
+    height: 400px;
+  }
+  .parallax {
+    text-align: center;
+    margin: 0px;
+    padding: 40% 0 0 0;
+    width: 100%;
+    font-size: 18px;
+  }
+  .parallax_description {
+    padding: 0px;
+    width: 90%;
+    margin: 25px 0 0 12px;
+    float: none;
+    text-align: center;
+  }
+  .banner {
+    background-color: #2D9AB7;
+    background-image: none;
+  }
+  .tagline {
+    margin-top: 20px;
+    line-height: 22px;
+  }
+  .hero_header {
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 22px;
+    text-align: center;
+  }
+  .daihyoumv section {
+    width: 100%;
+  }
 }
 
-/* Small Tablets */
-@media (min-width: 321px)and (max-width: 767px) {
-.logo {
-width: 100%;
-text-align: center;
-margin-top: 13px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-color: #043745;
-}
-.container header nav {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-width: 100%;
-float: none;
-overflow: auto;
-display: inline-block;
-background: #52bad5;
-}
-header nav ul {
-padding: 0px;
-float: none;
-}
-nav ul li {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-width: 100%;
-text-align: center;
-padding-top: 8px;
-padding-bottom: 8px;
-}
-.text_column {
-width: 100%;
-text-align: left;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-}
-.thumbnail {
-width: 100%;
-}
-.footer_column {
-width: 100%;
-margin-top: 0px;
-}
-.parallax {
-text-align: center;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-padding-top: 40%;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-width: 100%;
-font-size: 18px;
-}
-.parallax_description {
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-margin-top: 30%;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-float: none;
-width: 100%;
-text-align: center;
-}
-.thumbnail {
-width: 50%;
-}
-.parallax {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-padding-top: 20%;
-}
-.parallax_description {
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-width: 100%;
-padding-top: 30px;
-}
-.banner {
-padding-left: 20px;
-padding-right: 20px;
-}
-.footer_column {
-width: 100%;
-}
+/** ==========================================
+ * Responsive: Small Tablets (321px ~ 767px)
+ * ========================================== */
+@media (min-width: 321px) and (max-width: 767px) {
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin: 13px 0 0 0;
+    color: #043745;
+  }
+  .container header nav {
+    margin: 0px;
+    width: 100%;
+    float: none;
+    overflow: auto;
+    display: inline-block;
+    background: #52bad5;
+  }
+  header nav ul {
+    padding: 0px;
+    float: none;
+  }
+  nav ul li {
+    margin: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5%;
+  }
+  img.text_column {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+  .about h4 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  p.text_column {
+    width: 100%;
+    text-align: justify;
+  }
+  .thumbnail {
+    width: 50%;
+  }
+  .footer_column {
+    width: 100%;
+    margin-top: 0px;
+    height: auto;
+  }
+  .footer_column iframe {
+    width: 100%;
+    height: 450px;
+  }
+  .parallax {
+    text-align: center;
+    margin: 0px;
+    padding: 20% 0 0 0;
+    width: 100%;
+    font-size: 18px;
+  }
+  .parallax_description {
+    margin: 0px;
+    width: 100%;
+    padding-top: 30px;
+    float: none;
+    text-align: center;
+  }
+  .banner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .daihyoumv section {
+    width: 45%;
+  }
 }
 
-/* Small Desktops */
+/** ==========================================
+ * Responsive: Small Desktops (768px ~ 1096px)
+ * ========================================== */
 @media (min-width: 768px) and (max-width: 1096px) {
-.text_column {
-width: 100%;
+  .thumbnail {
+    width: 50%;
+  }
+  .banner {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+  .daihyoumv section {
+    width: 30%;
+  }
 }
-.thumbnail {
-width: 50%;
-}
-.text_column {
-width: 100%;
-margin-top: 0px;
-margin-right: 0px;
-margin-bottom: 0px;
-margin-left: 0px;
-padding-top: 0px;
-padding-right: 0px;
-padding-bottom: 0px;
-padding-left: 0px;
-}
-.banner {
-margin-top: 0px;
-padding-top: 0px;
-}
-}
-
